@@ -1,15 +1,18 @@
 import React from 'react';
+import Word from '../Word/Word';
+import styled from 'styled-components';
+
+const AnswerWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
 
 const AnswerBlock: React.FC = () => {
   return (
-    <div>
-      <hr />
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      <hr />
-      Unde dignissimos quia dolor hic laboriosam deserunt voluptatum veritatis beatae, deleniti
-      quisquam qui suscipit eius ex itaque esse quas a veniam quasi?
-      <hr />
-    </div>
+    <AnswerWrapper>
+      <Word />
+    </AnswerWrapper>
   );
 };
 

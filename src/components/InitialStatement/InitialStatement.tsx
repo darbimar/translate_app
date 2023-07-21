@@ -1,8 +1,23 @@
 import React from 'react';
+import { styled } from 'styled-components';
+
+const StatementWrapper = styled.div`
+  position: relative;
+`;
+
+const Text = styled.div`
+  position: absolute;
+  top: 17px;
+  left: 47px;
+  width: 230px;
+  font-size: 18px;
+  line-height: normal;
+  text-align: justify;
+`;
 
 const InitialStatement = () => {
   return (
-    <div>
+    <StatementWrapper>
       <svg
         width="307"
         height="92"
@@ -15,8 +30,8 @@ const InitialStatement = () => {
           stroke-width="2"
         />
       </svg>
-      <div className="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
-    </div>
+      <Text>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</Text>
+    </StatementWrapper>
   );
 };
 
