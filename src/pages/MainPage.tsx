@@ -25,7 +25,7 @@ const MainPage: React.FC<StyleProps> = ({ className }) => {
       <TopBlock />
       <AnswerBlock />
       <OptionsBlock />
-      <Button />
+      <Button>Check</Button>
     </div>
   );
 };

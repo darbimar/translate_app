@@ -12,8 +12,12 @@ const StyledButton = styled.button`
   line-height: normal;
 `;
 
-const Button: React.FC = () => {
-  return <StyledButton>Check</StyledButton>;
+type ButtonProps = {
+  children: string;
+};
+
+const Button: React.FC<ButtonProps> = ({ children }) => {
+  return <StyledButton>{children}</StyledButton>;
 };
 
 export default Button;

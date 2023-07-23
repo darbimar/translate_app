@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styled from 'styled-components';
 
 const WordWrapper = styled.div`
@@ -12,8 +12,13 @@ const WordWrapper = styled.div`
   text-align: center;
 `;
 
-const Word = () => {
-  return <WordWrapper>esst</WordWrapper>;
+type WordProps = {
+  children?: string;
+  draggable?: boolean;
+};
+
+const Word: React.FC<WordProps> = ({ children }) => {
+  return <WordWrapper>{children}</WordWrapper>;
 };
 
 export default Word;
