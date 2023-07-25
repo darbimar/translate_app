@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import { styled } from 'styled-components';
 import { GET_SENTENCE } from '../../api/sentense';
+import { styled } from 'styled-components';
 
 const SentenceWrapper = styled.div`
   position: relative;
@@ -17,10 +17,8 @@ const Text = styled.div`
   text-align: justify;
 `;
 
-const InitialSentence = () => {
+const InitialSentence: React.FC = () => {
   const { data } = useQuery(GET_SENTENCE);
-
-  console.log(data);
 
   return (
     <SentenceWrapper>
@@ -36,7 +34,7 @@ const InitialSentence = () => {
           strokeWidth="2"
         />
       </svg>
-      <Text>{data.sentense.ru}</Text>
+      <Text>{data.sentence.ru}</Text>
     </SentenceWrapper>
   );
 };

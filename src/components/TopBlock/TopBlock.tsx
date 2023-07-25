@@ -7,7 +7,7 @@ const TopBlockWrapper = styled.div`
   display: flex;
 `;
 
-const TopBlock = () => {
+const TopBlock: React.FC = () => {
   return (
     <TopBlockWrapper>
       <img src={avatar} alt="" />

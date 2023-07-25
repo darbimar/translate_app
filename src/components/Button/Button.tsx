@@ -14,10 +14,11 @@ const StyledButton = styled.button`
 
 type ButtonProps = {
   children: string;
+  handleCheck: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ children }) => {
-  return <StyledButton>{children}</StyledButton>;
+const Button: React.FC<ButtonProps> = ({ children, handleCheck }) => {
+  return <StyledButton onClick={handleCheck}>{children}</StyledButton>;
 };
 
 export default Button;
