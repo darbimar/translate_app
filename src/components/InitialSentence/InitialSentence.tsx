@@ -1,21 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { GET_SENTENCE } from '../../api/sentense';
-import { styled } from 'styled-components';
-
-const SentenceWrapper = styled.div`
-  position: relative;
-`;
-
-const Text = styled.div`
-  position: absolute;
-  top: 17px;
-  left: 47px;
-  width: 230px;
-  font-size: 18px;
-  line-height: normal;
-  text-align: justify;
-`;
+import { SentenceWrapper, Text } from './style';
 
 const InitialSentence: React.FC = () => {
   const { data } = useQuery(GET_SENTENCE);

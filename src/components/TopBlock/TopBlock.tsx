@@ -1,11 +1,7 @@
 import React from 'react';
 import InitialSentence from '../InitialSentence/InitialSentence';
 import avatar from '../../assets/avatar.png';
-import { styled } from 'styled-components';
-
-const TopBlockWrapper = styled.div`
-  display: flex;
-`;
+import { TopBlockWrapper } from './style';
 
 const TopBlock: React.FC = () => {
   return (

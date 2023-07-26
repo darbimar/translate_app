@@ -1,28 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Section, Word } from '../../types/types';
-import styled from 'styled-components';
-
-const StyledSection = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  height: 100px;
-  padding: 12px 0;
-  border-top: 2px #4b4b4b51 solid;
-`;
-
-const StyledWord = styled.div`
-  width: 70px;
-  height: 30px;
-  padding: 4px 0;
-  border-radius: 13px;
-  border: 1px solid #c9c9c9;
-  background: #fff;
-  box-shadow: 0px 8px 4px -6px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  cursor: grab;
-  transition: 0.5s;
-`;
+import { StyledSection, StyledWord } from './style';
 
 type ConsructorProps = {
   options: Word[];
@@ -41,11 +19,15 @@ const ConstuctorBlock: React.FC<ConsructorProps> = ({
   const [currentSection, setCurrentSection] = useState<Section | null>(null);
   const [currentWord, setCurrentWord] = useState<Word | null>(null);
 
-  const dragStartHandler = (e: React.DragEvent<HTMLDivElement>, section: Section, item: Word) => {
+  const dragStartHandler = (
+    e: MouseEvent | TouchEvent | PointerEvent,
+    section: Section,
+    item: Word,
+  ) => {
     setCurrentWord(item);
     setCurrentSection(section);
   };
-  const dragEndHandler = (e: React.DragEvent<HTMLDivElement>) => {};
+
   const dragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
@@ -102,7 +84,6 @@ const ConstuctorBlock: React.FC<ConsructorProps> = ({
     setTimeout(() => {
       setOptions(options.sort((a: Word, b: Word) => a.id - b.id));
       setIsSorted(!isSorted);
-      console.log(options);
     }, 1000);
   }, [sections]);
 
@@ -115,10 +96,13 @@ const ConstuctorBlock: React.FC<ConsructorProps> = ({
           key={section.id}>
           {section.items.map((item: Word) => (
             <StyledWord
+              layout
+              transition={{
+                duration: 1,
+                ease: 'linear',
+              }}
               draggable={true}
               onDragStart={(e) => dragStartHandler(e, section, item)}
-              onDragLeave={(e) => dragEndHandler(e)}
-              onDragEnd={(e) => dragEndHandler(e)}
               onDragOver={(e) => dragOverHandler(e)}
               onDrop={(e) => dropHandler(e, section, item)}
               key={item.id}>

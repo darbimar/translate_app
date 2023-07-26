@@ -1,30 +1,12 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_SENTENCE } from '../api/sentense';
+import { useSpeechSynthesis } from 'react-speech-kit';
 import TopBlock from '../components/TopBlock/TopBlock';
 import Button from '../components/Button/Button';
 import ConstuctorBlock from '../components/ConstructorBlock/ConstructorBlock';
-import { useSpeechSynthesis } from 'react-speech-kit';
-import styled from 'styled-components';
 import { Section, Word } from '../types/types';
-
-const Title = styled.h1`
-  color: #252525;
-  text-shadow: -2px -4px 3px 0px #fff;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`;
-
-const WrongMessage = styled.div`
-  color: #f00;
-  text-shadow: 1px 2px 2px 0px rgba(91, 13, 13, 0.5);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  text-align: center;
-`;
+import { CorrectMessage, Title, WrongMessage } from './style';
 
 type StyleProps = {
   className?: string;
@@ -76,7 +58,7 @@ const MainPage: React.FC<StyleProps> = ({ className }) => {
         sections={sections}
         setSections={setSections}
       />
-      {isCorrect && <div>Correct!</div>}
+      {isCorrect && <CorrectMessage>Correct!</CorrectMessage>}
       {isWrong && <WrongMessage>Something wrong!</WrongMessage>}
       <Button handleCheck={handleCheck}>Check</Button>
     </div>
