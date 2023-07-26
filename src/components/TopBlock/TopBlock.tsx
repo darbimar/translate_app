@@ -1,6 +1,6 @@
 import React from 'react';
-import avatar from '../../assets/avatar.png';
 import InitialSentence from '../InitialSentence/InitialSentence';
+import avatar from '../../assets/avatar.png';
 import { styled } from 'styled-components';
 
 const TopBlockWrapper = styled.div`

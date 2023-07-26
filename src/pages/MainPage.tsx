@@ -4,7 +4,9 @@ import { GET_SENTENCE } from '../api/sentense';
 import TopBlock from '../components/TopBlock/TopBlock';
 import Button from '../components/Button/Button';
 import ConstuctorBlock from '../components/ConstructorBlock/ConstructorBlock';
+import { useSpeechSynthesis } from 'react-speech-kit';
 import styled from 'styled-components';
+import { Section, Word } from '../types/types';
 
 const Title = styled.h1`
   color: #252525;
@@ -23,16 +25,6 @@ const WrongMessage = styled.div`
   font-weight: 400;
   text-align: center;
 `;
-
-export type Word = {
-  id: number;
-  word: string;
-};
-
-export type Section = {
-  id: number;
-  items: Word[];
-};
 
 type StyleProps = {
   className?: string;
@@ -61,10 +53,13 @@ const MainPage: React.FC<StyleProps> = ({ className }) => {
 
   const answer = sections[0].items.map((obj: Word) => obj.word).join(' ');
 
+  const { speak } = useSpeechSynthesis();
+
   const handleCheck = () => {
     if (data.sentence.en === answer) {
       setIsCorrect(true);
       setIsWrong(false);
+      speak({ text: answer });
     } else {
       setIsWrong(true);
       setIsCorrect(false);

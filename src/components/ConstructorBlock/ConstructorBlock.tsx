@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Section, Word } from '../../pages/MainPage';
+import { Section, Word } from '../../types/types';
 import styled from 'styled-components';
 
 const StyledSection = styled.div`
@@ -8,6 +8,7 @@ const StyledSection = styled.div`
   gap: 10px;
   height: 100px;
   padding: 12px 0;
+  border-top: 2px #4b4b4b51 solid;
 `;
 
 const StyledWord = styled.div`
