@@ -15,6 +15,16 @@ export const StyledMainPage = styled(MainPage)`
   flex-direction: column;
   gap: 20px;
   width: 482px;
+  @media (max-width: 600px) {
+    width: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: 320px;
+  }
+  @media (max-width: 400px) {
+    width: 250px;
+  }
 `;
 
 export const spinner = keyframes`

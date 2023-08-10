@@ -9,8 +9,8 @@ const InitialSentence: React.FC = () => {
   return (
     <SentenceWrapper>
       <svg
-        width="307"
-        height="92"
+        width="100%"
+        height="40%"
         viewBox="0 0 307 92"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

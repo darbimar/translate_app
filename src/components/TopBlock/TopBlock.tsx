@@ -1,12 +1,12 @@
 import React from 'react';
 import InitialSentence from '../InitialSentence/InitialSentence';
 import avatar from '../../assets/avatar.png';
-import { TopBlockWrapper } from './style';
+import { Image, TopBlockWrapper } from './style';
 
 const TopBlock: React.FC = () => {
   return (
     <TopBlockWrapper>
-      <img src={avatar} alt="" />
+      <Image src={avatar} alt="" />
       <InitialSentence />
     </TopBlockWrapper>
   );

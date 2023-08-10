@@ -7,6 +7,12 @@ export const Title = styled.h1`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media (max-width: 500px) {
+    font-size: 28px;
+  }
+  @media (max-width: 400px) {
+    font-size: 22px;
+  }
 `;
 
 export const WrongMessage = styled.div`

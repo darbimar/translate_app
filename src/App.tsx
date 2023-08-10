@@ -23,6 +23,14 @@ const App: React.FC = () => {
     );
   }
 
+  function fetchData(data: unknown) {
+    if (typeof data === 'string') {
+      console.log(data.toLowerCase());
+    }
+  }
+
+  fetchData(4);
+
   return (
     <AppWrapper>
       <StyledMainPage />
